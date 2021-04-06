@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const Button = styled.button`
  position: absolute;
-  top: 17rem;
+  top: 20rem;
   right: 1rem;
   background: none;
   border: none;
@@ -25,11 +25,11 @@ const Locate = ({panTo}) => {
   return (
 
     <Button
-      onClick={() => {
+      onClick={() => { //                                   use browsers built in geolocation 
         navigator.geolocation.getCurrentPosition((position) => {
-          panTo({
+          panTo({ //                                        gives us coords that are panned to when app is clicked 
             lat: position.coords.latitude,
-            lng: position.chords.longitude,
+            lng: position.coords.longitude,
           });
         },
         () => null
