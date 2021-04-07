@@ -17,7 +17,7 @@ import {
 // styles for combobox 
 const Searched = styled.div`
   position: absolute;
-  top: 14rem;
+  top: 16rem;
   left: 43rem;
   transform: translateX(-100%);
   color: black; 

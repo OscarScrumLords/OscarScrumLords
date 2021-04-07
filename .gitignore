@@ -7,6 +7,6 @@ node_modules
 # Project
 client/dist/app.bundle.js
 client/dist
-.env.local
+.env
 apikey.js
 package-lock.json
