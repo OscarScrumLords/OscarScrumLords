@@ -6,12 +6,16 @@ const db = mysql.createConnection({
   database: 'bike'
 });
 
-// db.connect((err, res) => {
-//   if (err) {
-//     return console.error('FAILURE');
-//   }
-//   return console.log('Connected to bikeAround', res.connectionId);
-// });
+/*
+TO GRAB THIS DB
+mysql.server start
+In a separate terminal CD into server folder
+then mysql -u root < schema.sql
+run mysql -u root
+show databases
+use bike
+show tables
+*/
 
 //testing
 module.exports = {
