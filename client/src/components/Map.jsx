@@ -48,6 +48,7 @@ const Map = () => {
   // state for markers 
   const [markers, setMarkers] = React.useState([]); 
   const [selected, setSelected] = React.useState(null); 
+  
   useEffect(() => {
     axios.get('/bike')
       .then(({ data: { results } }) => {
