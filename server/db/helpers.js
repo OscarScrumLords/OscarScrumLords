@@ -18,11 +18,11 @@ const postRoutes = ({ routeName, start, end, rating }) => {
 
 
 //call to API search key, store in LANDMARKS DB: address_id, phone, services, bus_hours
-const postLandmarks = ({ addressId, phone, services, busHours }) => {
+const postLandmarks = ({ kind, deets, userId, lat, lng, media }) => {
   return new Promise((resolve, reject) => {
-    db.query('INSERT INTO landmarks(address_id, phone, services, bus_hours) \
+    db.query('INSERT INTO poi(kind, deets, userId, lat, lng, media) \
     VALUES (?, ?, ?, ?)',
-    [addressId, phone, services, busHours],
+    [kind, deets, userId, lat, lng, media],
     (err, results) => {
       if (err) {
         return reject(err);
@@ -34,11 +34,11 @@ const postLandmarks = ({ addressId, phone, services, busHours }) => {
   
 //PHOTO BANK TO DOCUMENT ROADS
 //store image to LOCATIONS DB and pin location on map: coordinates, time_id, date_id, media
-const photoBank = ({ coordinates, time, date, img }) => {
+const photoBank = ({ userId, lat, lng, media }) => {
   return new Promise((resolve, reject) => {
-    db.query('INSERT INTO locations(coordinates, time_id, date_id, media) \
+    db.query('INSERT INTO poi(userId, lat, lng, media) \
     VALUES (?, ?, ?, ?)',
-    [coordinates, time, date, img],
+    [userId, lat, lng, media],
     (err, results) => {
       if (err) {
         return reject(err);
